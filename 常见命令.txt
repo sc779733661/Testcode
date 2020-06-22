@@ -1,0 +1,29 @@
+git:
+
+手动设置提交用户的email和用户名:
+git config --global user.name "myname"
+git config --global user.email  "test@gmail.com"
+
+查看当前仓库配置信息:
+git config --local  --list
+
+查看当前用户（global）配置:
+git config --global  --list
+
+创建一个Git仓库步骤：
+1.执行git命令，此命令会在当前目录下创建一个.git文件夹：git init
+2.将项目的所有文件添加到仓库中：git add .
+3.commit到仓库：git commit -m "注释语句"
+4.将本地的仓库关联到github上:git remote add origin https://github.com/qinghua2016/test.git
+5.上传代码到github远程仓库:git push -u origin master
+6.如果不小心将git远程地址配错了，再次配置提示以下错误：fatal: 远程 origin 已经存在。
+此时只需要将远程配置删除，重新添加即可:
+git remote rm origin
+git remote add origin  https://github.com/qinghua2016/test.git
+
+git 查看远程仓库地址：git remote -v
+
+Ubuntu：
+查看内存：free
+当前路径：pwd
+
