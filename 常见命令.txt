@@ -1,4 +1,4 @@
-git:
+************git:
 
 手动设置提交用户的email和用户名:
 git config --global user.name "myname"
@@ -23,7 +23,40 @@ git remote add origin  https://github.com/qinghua2016/test.git
 
 git 查看远程仓库地址：git remote -v
 
-Ubuntu：
+************Ubuntu：
+
 查看内存：free
 当前路径：pwd
+查看gpu状态：watch -n 1 nvidiz-smi
+给文件权限：chmod +X
 
+linux删除日志文件：
+1.cd /var/log
+2.查看占用的磁盘空间：du -sh
+3.查看文件总数：du -sm
+4.删除1天之前的旧文件：sudo find /var/log/ -type f -mtime +1 -exec rm -f {} \;
+
+临时源 ：-i https://pypi.tuna.tsinghua.edu.cn/simple
+python -m pip install -r requirements.txt  -i  https://pypi.doubanio.com/simple/  --trusted-host pypi.doubanio.com 
+
+旋转屏幕：xrandr -o left ,xrandr -o right, xrandr -o inverted 上下翻转, xrandr -o normal 回到正常
+永久保存屏幕显示方向：
+终端输入：sudo gedit  /etc/X11/Xsession.d/55gnome-session_gnomerc      
+在打开的文件末端添加  xrandr  --output Virtual1 --rotate left
+保存即可
+
+链接jetsonnano:ssh sc@192.168.1.104
+
+************conda :
+
+激活conda： source ~/.bashrc
+创建环境：conda create -n env_name python=3.7
+退出环境： conda deactivate 或 source deactivate base
+激活环境： conda activate base 或 source activate base
+删除环境： conda remove -n env_name --all
+删除环境中的包：conda remove --name $env_name $package_name
+安装包：conda install package_name
+查看有那些环境：conda env list
+
+查找tensorflow版本：conda search tensorflow-gpu
+安装tensorflow:conda install tensorflow-gpu==1.15
